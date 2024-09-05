@@ -100,11 +100,11 @@ const LinkTo = () => {
             {url?.title}
           </span>
           <a
-            href={`https://zapurl.netlify.app/${link}`}
+            href={`https://zap-url.netlify.app/${link}`}
             target="_blank"
             className="text-lg sm:text-2xl text-blue-400 font-bold hover:underline cursor-pointer"
           >
-            https://zapurl.netlify.app/{link}
+            https://zap-url.netlify.app/{link}
           </a>
           <a
             href={url?.original_url}
