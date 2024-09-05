@@ -58,7 +58,7 @@ const Header = () => {
                 <Link to="/dashboard">
                   <li className="text-md flex cursor-pointer gap-2 items-center mt-2 ">
                     <LiaLinkSolid className="text-blue-500 text-xl" />
-                    <a>My Links</a>
+                    <span>My Links</span>
                   </li>
                 </Link>
                 <li className="text-md text-red-500 flex cursor-pointer gap-2 items-center mt-2 ">

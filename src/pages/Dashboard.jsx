@@ -65,9 +65,9 @@ const Dashboard = () => {
       </div>
       <div className="flex mx-auto justify-between items-center w-10/12  ">
         <h1 className="text-2xl font-extrabold">My Links</h1>
-        <button className="btn btn-secondary w-28  font-bold text-gray-950 ">
+        <div className="btn btn-secondary w-28  font-bold text-gray-950 ">
           <CreateLink />
-        </button>
+        </div>
       </div>
       <div className="relative mx-auto w-10/12  ">
         <input
