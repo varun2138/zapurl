@@ -1,14 +1,15 @@
 import supabase from "./supabase";
 import { UAParser } from "ua-parser-js";
 
-const getUrlClicks = async (url_ids) => {
+const getUrlClicks = async (urlIds) => {
   const { data, error } = await supabase
     .from("clicks")
     .select("*")
-    .in("url_id", url_ids);
+    .in("url_id", urlIds);
   if (error) {
     console.error(error.message);
-    throw new Error("cannot get user clicks");
+    return null;
+    // throw new Error("cannot get user clicks");
   }
 
   return data;
@@ -30,7 +31,8 @@ const storeClicks = async ({ id, originalUrl }) => {
     });
     window.location.href = originalUrl;
   } catch (error) {
-    throw new Error(error.message);
+    console.error("Error recording click:", error);
+    // throw new Error(error.message);
   }
 };
 

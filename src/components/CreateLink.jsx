@@ -125,9 +125,7 @@ const CreateLink = () => {
             {errors.longUrl && <Error message={errors.longUrl} />}
 
             <div className="flex flex-row  items-center gap-2  ">
-              <p className="text-sm italic font-light text-blue-400">
-                zapUrl.in/
-              </p>
+              <p className="text-sm italic font-light text-blue-400">zapurl/</p>
               <input
                 className="flex justify-start px-2 w-full h-10 bg-gray-950 border border-gray-800 rounded-md outline-none      pr-2 text-white placeholder:text-gray-600 placeholder:text-sm placeholder:opacity-70  "
                 type="text"

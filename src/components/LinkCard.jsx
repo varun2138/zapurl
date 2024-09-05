@@ -73,7 +73,7 @@ const LinkCard = ({ url = [], fetchUrls }) => {
           {url?.title}
         </span>
         <span className="text-lg md:text-xl text-blue-400 font-semibold hover:underline cursor-pointer">
-          https://zapurl.netlify.app/
+          https://zapurl.vercel.app/
           {url?.custom_url ? url?.custom_url : url?.short_url}
         </span>
         <span className="flex    gap-1 cursor-pointer hover:underline">
@@ -87,7 +87,7 @@ const LinkCard = ({ url = [], fetchUrls }) => {
         <button
           onClick={() =>
             navigator.clipboard.writeText(
-              `https://zapurl.netlify.app/${url?.short_url}`
+              `https://zapurl.vercel.app/${url?.short_url}`
             )
           }
           className="text-2xl hover:text-blue-400"

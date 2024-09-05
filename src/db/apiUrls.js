@@ -48,6 +48,8 @@ const createUrl = async ({ title, longUrl, customUrl, user_id }, qrcode) => {
       },
     ])
     .select();
+
+  //
   if (error) {
     console.error(error.message);
     throw new Error("error while creating url");
@@ -57,16 +59,16 @@ const createUrl = async ({ title, longUrl, customUrl, user_id }, qrcode) => {
 };
 
 const getLongUrl = async (id) => {
-  const { data, error } = await supabase
+  const { data: shortLinkData, error: shortLinkError } = await supabase
     .from("urls")
     .select("id", "original_url")
     .or(`short_url.eq.${id},custom_url.eq.${id}`)
     .single();
-  if (error) {
-    console.error(error.message);
-    throw new Error("Error fetching short link");
+  if (shortLinkError && shortLinkError.code !== "PGRST116") {
+    console.error("Error fetching short link:", shortLinkError);
+    return;
   }
-  return data;
+  return shortLinkData;
 };
 
 const getUrl = async ({ id, user_id }) => {
