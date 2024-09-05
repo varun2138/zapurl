@@ -92,7 +92,6 @@ const LinkTo = () => {
       {(loading || loadingStats) && (
         <BarLoader className="mb-4" width={"100%"} color="#36d7b7" />
       )}
-      {/* https://zapurl.netlify.app */}
 
       <div className="flex flex-col gap-8 sm:flex-row justify-between sm:px-12 sm:py-6 ">
         <div className="flex flex-col items-start gap-8 rounded-lg w-4/5 sm:w-3/5 p-8">
@@ -100,30 +99,16 @@ const LinkTo = () => {
             {url?.title}
           </span>
           <a
-            href={`https://zap-url.netlify.app/${link}`}
+            href={`https://zapurl.vercel.app/${link}`}
             target="_blank"
             className="text-lg sm:text-2xl text-blue-400 font-bold hover:underline cursor-pointer"
           >
-            https://zap-url.netlify.app/{link}
+            https://zapurl.vercel.app/{link}
           </a>
           <a
             href={url?.original_url}
             target="_blank"
             className="flex items-center gap-1 hover:underline cursor-pointer "
-            onClick={async (e) => {
-              // Prevent the default action of the anchor tag
-              e.preventDefault();
-
-              // Track the click in your database
-              try {
-                await fnStats(); // Call the function that tracks the click
-              } catch (error) {
-                console.error("Error tracking click:", error);
-              }
-
-              // Redirect to the shortened URL
-              window.location.href = `https://zapurl.netlify.app/${link}`;
-            }}
           >
             <FaLink className="p-1 text-xl  text-green-400" />
             {url?.original_url}
@@ -135,7 +120,7 @@ const LinkTo = () => {
             <button
               onClick={() =>
                 navigator.clipboard.writeText(
-                  `https://zapurl.netlify.app/${url?.short_url}`
+                  `https://zapurl.vercel.app/${link}`
                 )
               }
               className="text-2xl hover:text-blue-400"
